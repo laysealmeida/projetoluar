@@ -1,0 +1,585 @@
+@font-face {
+  font-family: ubuntu;
+  src: url(../font/ubuntu.ttf);
+}
+@font-face {
+  font-family: yanone;
+  src: url(../font/yanone.ttf);
+}
+
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-width: 1100px;
+  min-height: 600px;
+  margin: 0;
+  font-family: 'ubuntu', sans-serif;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently*/
+}
+
+section {
+  background-color: #efefef;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-image: url('../img/malha.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow: hidden;
+}
+
+a:active,
+a:hover,
+a:visited,
+a:link {
+  text-decoration: none;
+  color: #000;
+}
+.overflow-y {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.bb {
+  box-sizing: border-box;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+
+.h-100 {
+  height: 100%;
+}
+
+.px-5 {
+  padding: 0 50px;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+section>div {
+  height: 100%;
+}
+
+.col-2 {
+  width: 20%;
+  min-width: 200px;
+}
+
+.col-6 {
+  background: #fff;
+  box-shadow: 0 0 5px #000;
+  height: 95%;
+  ;
+  width: 60%;
+  min-width: 600px;
+  border-radius: 5px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.ai-start {
+  align-items: flex-start;
+}
+
+.ai-end {
+  align-items: flex-end;
+}
+
+.jc-around {
+  justify-content: space-around;
+}
+
+.jc-between {
+  justify-content: space-between;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-end {
+  justify-content: flex-end;
+}
+
+.fd-column {
+  flex-direction: column;
+}
+
+#logo {
+  cursor: pointer;
+}
+
+#logo img {
+  padding-top: 15px;
+  margin-bottom: 50px;
+  transition: margin-bottom 0.5s;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
+/* LOGO LUA */
+/* sombra */
+#logo:after {
+  content: '';
+  position: relative;
+  width: 0px;
+  height: 0px;
+  box-shadow: 0 0 75px 50px #000;
+  border-radius: 100%;
+  bottom: 25px;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateX(80deg);
+  transform-style: preserve-3d;
+  transform: rotateX(80deg);
+  transition: box-shadow 0.5s;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+  z-index: 0;
+}
+
+/* container do texto */
+#logo div {
+  height: 0%;
+  transition: height 0.5s;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
+#logo:hover div {
+  height: 100%;
+}
+
+/* efeito sombra logo diminuindo */
+#logo:hover:after {
+  box-shadow: 0 0 50px 25px #000;
+}
+
+#logo:hover img {
+  margin: 0;
+}
+
+#logo:hover p {
+  top: -15px;
+}
+
+/* texto logo lua */
+#logo p {
+  display: inline-block;
+  width: 170px;
+  background: rgba(3, 169, 244, 0.7);
+  margin: 0;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: justify;
+  position: relative;
+  z-index: 1;
+}
+
+/* PARCEIROS */
+/* box branco */
+#parceiros>div {
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 10px #000;
+  width: 60%;
+  height: 90%;
+  box-sizing: border-box;
+  padding-top: 15px;
+}
+
+/* tarja azul */
+#parceiros>div>div:first-child {
+
+  top: 60px;
+  z-index: 1;
+  width: 220px;
+  padding: 2px;
+  background: rgba(48, 142, 201, 1);
+  font-size: 25px;
+  color: #fff;
+  border-radius: 30px 0 0 30px;
+  margin-left: 60px;
+  padding-left: 30px;
+}
+
+/* tamanho das imagens */
+#parceiros>div>div>img {
+  width: 100%;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* quando parceiro clicado mostra conteudo */
+.box-card:active .card {
+  display: block;
+  right: 150px;
+  top: -20px;
+  z-index: 2;
+}
+
+.card {
+  display: none;
+  background: rgba(48, 142, 201, .9);
+  padding: 20px 0 0 0;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.card img {
+  width: 200px;
+}
+
+.card p {
+  padding: 10px;
+  text-align: justify;
+}
+
+/* CONTEUDO */
+#conteudo>div.fd-column {
+  height: 98%;
+  width: 98%;
+  background: #fff;
+  color: #222;
+  overflow: hidden;
+}
+
+.menu {
+  width: 100%;
+  height: 40px;
+}
+
+/* botao menu normal */
+.menu a {
+  height: 24px;
+  width: 20%;
+  background: #efefef;
+  border-radius: 20px;
+  margin: 5px;
+  box-shadow: inset 0 -2px 5px #666;
+  display: flex;
+  padding-top: 6px;
+  align-items: normal;
+  cursor: pointer;
+}
+
+/* botao menu ativo */
+.menu a.active {
+  height: 64px;
+  border-radius: 20px 20px 0 0;
+  background: #000;
+  color: #fff;
+  box-shadow: inset 0 2px 5px #fff;
+}
+
+/* local que mostra o conteudo */
+#conteudo .container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #b9c4d8;
+  background: -moz-linear-gradient(45deg, #b9c4d8 0%, #b9c4d8 57%, #3c679e 100%);
+  background: -webkit-linear-gradient(45deg, #b9c4d8 0%, #b9c4d8 57%, #3c679e 100%);
+  background: linear-gradient(45deg, #b9c4d8 0%, #b9c4d8 57%, #3c679e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b9c4d8', endColorstr='#3c679e', GradientType=1);
+  border-radius: 20px;
+  border: 10px solid #000;
+  box-sizing: border-box;
+  box-shadow: inset 5px 0 5px #666, inset -5px 0 5px #666;
+}
+
+/* input de busca */
+.search input,
+.search input:focus {
+  z-index: 1;
+  width: 230px;
+  margin: 5px 40px 0 0;
+  box-sizing: border-box;
+  border: 0 solid transparent;
+  border-radius: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+  line-height: 30px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('../img/lupa.svg');
+  background-position: 20px 7px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding: 2px 20px 2px 55px;
+  outline: none;
+}
+
+/* lupa */
+.search img {
+  width: 25px;
+  opacity: 0.4;
+  margin-right: 10px;
+}
+
+/* postagem da pagina home */
+.post {
+  margin: 5px 30px 5px 20px;
+  background: rgba(143, 167, 195, .4);
+  padding: 10px 20px 10px 40px;
+  border-radius: 30px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+  cursor: pointer;
+}
+
+.post h3 {
+  margin: 0;
+}
+
+/* oculta o texto adicionando ... */
+.post .text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  height: 70px;
+  min-height: 70px;
+}
+
+/* imagem lua do texto expandido */
+.post .text div.img>img {
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  border-radius: 30px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.post .text div.img {
+  display: none;
+}
+
+.post:active .text>div.img {
+  display: flex;
+}
+
+/* redes sociais*/
+.social {
+  width: 25px;
+  margin-left: 10px;
+  box-shadow: 0 2px 5px rgba(66, 66, 66, 0.3);
+  border-radius: 100%;
+}
+
+/* mostra o texto completo do post */
+.post:active .text {
+  white-space: initial;
+  height: auto;
+  min-height: 70px;
+  text-indent: 2em;
+}
+
+/* oculta o btn mais do post */
+.post:active .tags {
+  display: none;
+}
+
+div.post div.text.d-flex div:first-child {
+  padding-right: 30px;
+}
+
+/* esconde as redes sociais */
+div.post div.text.d-flex div>div {
+  display: none;
+}
+
+/* quando ativa mostra as redes sociais */
+div.post:active div.text.d-flex div>div {
+  display: flex;
+}
+
+.post div {
+  font-size: 13px;
+}
+
+.tags div {
+  margin-top: 10px;
+  background: #eee;
+  padding: 2px 5px;
+  border-radius: 10px;
+  margin-right: 40px;
+}
+
+/* PROJETO */
+#projeto>div {
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* efeito do circulo atras do texto em projeto */
+#projeto .circle,
+#download .circle ,
+#equipe .circle,
+#contato .circle  {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(53, 104, 177, 0.2);  
+  border-radius: 100% 0 0 0;
+  z-index: 0;
+}
+
+/* box que armazena todo o texto e imagem do projeto */
+#projeto .box {
+  padding: 20px;
+  border-radius: 30px;
+  background: rgba(153, 168, 196, .6);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* tabsize do texto projeto */
+#projeto .text {
+  text-indent: 2em;
+  margin-right: 30px;
+}
+
+/* tamnho da imagem dentro do texto projeto */
+#projeto img {
+  width: 200px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 30px;
+}
+/* PAGE DOWNLOAD */
+#download .box-download ,
+#equipe .box-download {
+  width: 95%;
+  background: rgba(143, 167, 195, .6);
+  z-index: 1;
+  border-radius: 50px;
+  padding: 0 30px 20px 30px;
+  margin: 10px 20px 10px 20px;
+}
+/* posiciona o sub do tamanho do download */
+#download .box-download>div>sub {
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+.star {
+  background: url(../img/star.png);
+  background-size: auto 100%;
+  background-repeat: repeat;
+  filter: invert(40%);
+  height: 20px;
+  width: 100px;
+  min-width: 100px;
+  margin-right: 10px;
+}
+.download {
+  cursor: pointer;
+  background: rgb(81, 119, 172);
+  border-radius: 50px;
+  padding: 15px 20px;
+  box-shadow: inset -2px 2px 5px rgba(255, 255, 255, .7),
+              inset 2px 2px 5px rgba(0,0,0,.7),
+              -2px 2px 3px rgba(0,0,0,.9);
+}
+.download:active {
+  transform: scale(0.95);
+  
+}
+.download p {
+  color: #fff;
+  font-family: 'yanone', sans-serif;  
+  margin: 0;
+  margin-top: 7px;
+  font-size: 30px;
+}
+.download div{
+  background: red;
+  box-shadow: inset -2px 2px 5px rgba(255, 255, 255, .7),
+              inset 2px 2px 5px rgba(0,0,0,.7),
+              -2px 2px 3px rgba(0,0,0,.9);
+  border-radius: 100%;
+  padding: 7px;
+  margin-right: 5px;
+}
+.download img {
+  padding: 2px 2px 0px 0px;
+  width: 25px;  
+  filter: invert(100%);
+}
+
+#form>div{
+  padding: 50px;
+  background: rgba(143, 167, 195, .6);
+  width: 95%;
+  border-radius: 30px;
+  z-index: 1;
+}
+
+#form textarea{
+  background: rgba(255,255,255,.6);
+  padding: 50px;
+  width: 90%;
+  border-radius: 30px;;
+}
+
+/* SETAS RODAPE */
+#arrows {
+  margin-top: 5px;
+  height: 60px;
+}
+
+#arrows div {
+  background: #fff;
+  border-radius: 30px;
+  width: 90px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .3), inset -2px -2px 10px rgba(0, 0, 0, .3);
+  margin: 0 10px;
+  height: 30px;
+}
+
+#arrows img {
+  height: 40px;
+}
+
+#arrows div.left img {
+  transform: rotate(-180deg);
+}

@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@keyframes fire {
+    0% {
+        height: 42px;
+    }
+    5% {
+        height: 40px;
+    }
+    10% {
+        height: 42px;
+    }
+    15% {
+        height: 40px;
+    }
+    20% {
+        height: 42px;
+    }
+    25% {
+        height: 40px;
+    }
+    30% {
+        height: 42px;
+    }
+    35% {
+        height: 40px;
+    }
+    40% {
+        height: 42px;
+    }
+    45% {
+        height: 40px;
+    }
+    50% {
+        height: 42px;
+    }
+    55% {
+        height: 40px;
+    }
+    60% {
+        height: 42px;
+    }
+    65% {
+        height: 40px;
+    }
+    70% {
+        height: 42px;
+    }
+    75% {
+        height: 40px;
+    }
+    80% {
+        height: 42px;
+    }
+    85% {
+        height: 40px;
+    }
+    90% {
+        height: 42px;
+    }
+    95% {
+        height: 40px;
+    }
+    100% {
+        height: 0px;
+    }
+}
+
+@keyframes shootingstar {
+    0% {
+        top: -2000px;
+        left: -200px;
+    }
+    80% {
+        top: -1000px;
+        left: -200px;
+    }
+    100% {
+        top: 1000px;
+        left: calc( 100% + 300px);
+    }
+}
+
+@keyframes fly {
+    0% {
+        top: -200px;
+        left: 1000px;
+        transform: rotate(-115deg);
+    }
+    70% {
+        transform: rotate(-115deg);
+    }
+    100% {
+        top: -30px;
+        left: 220px;
+        transform: rotate(60deg);
+    }
+}
+
+@keyframes mexe-bandeira-frente {
+    0% {
+        top: 1px;
+    }
+    90% {
+        top: 1px;
+    }
+    100% {
+        top: -27px;
+    }
+}
+
+body {
+    background: #435d70;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* MOON */
+
+.moon {
+    background: #ff5f40;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    box-shadow: inset -25px -25px 0 0 #d95136;
+}
+
+.moon:after {
+    content: "";
+    width: 100px;
+    height: 20px;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: 230px;
+    left: 50px;
+    display: block;
+}
+
+#hole {
+    background: #d95136;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    position: relative;
+    left: 35px;
+    top: 40px;
+    box-shadow: inset 3px 3px 0 0 #ae412b;
+}
+
+#hole:after {
+    content: "";
+    background: #d95136;
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 100%;
+    position: relative;
+    left: 40px;
+    top: 50px;
+    box-shadow: inset 2px 2px 0 0 #ae412b;
+}
+
+#hole:before {
+    content: "";
+    background: #d95136;
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 100%;
+    position: relative;
+    left: 80px;
+    top: 0px;
+    box-shadow: inset 2px 2px 0 0 #ae412b;
+}
+
+/* ROCKET */
+
+#rocket {
+    position: relative;
+    top: -28px;
+    left: 219px;
+    width: 0;
+    height: 0;
+    transform: rotate(60deg);
+    animation: fly 7s linear;
+}
+
+#body:before {
+    content: "";
+    background: #acacac;
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 100%;
+    position: relative;
+    left: 5px;
+    top: 18px;
+    box-shadow: inset 1px 1px 0 0 #2b5baeeb;
+}
+
+#body {
+    position: relative;
+    height: 50px;
+    width: 20px;
+    background: white;
+    border-radius: 100%;
+    top: -22px;
+    left: -7px;
+    box-shadow: 0 2px 0 #eee;
+    z-index: 1;
+}
+
+#footer {
+    display: block;
+    position: relative;
+    top: -28px;
+    left: -9px;
+    height: 20px;
+    width: 25px;
+    background: white;
+    border-radius: 10px 10px 0 0;
+}
+
+#footer:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0px;
+    width: 15px;
+    background: red;
+    border-radius: 100%;
+    z-index: -1;
+    box-shadow: 0 2px 0 darkred;
+    left: 5px;
+    top: -13px;
+    animation: fire 7.3s linear;
+}
+
+#bandeira {
+    background: #ccc;
+    height: 12px;
+    width: 16px;
+    left: 99px;
+    position: relative;
+    top: -27px;
+    z-index: -1;
+    animation: mexe-bandeira-frente 8s;
+}
+
+#bandeira:after {
+    content: "";
+    display: block;
+    position: relative;
+    background: white;
+    width: 2px;
+    height: 28px;
+    left: 0px;
+    top: 1px;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    display: block;
+    transform: rotate(45deg);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.6) 100%);
+    width: 61px;
+    height: 2px;
+    animation-name: shootingstar;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
+
+p {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-family: 'Indie Flower', cursive;
+    color: white;
+    letter-spacing: 3px;
+    cursor: default;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
